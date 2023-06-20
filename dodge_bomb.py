@@ -11,6 +11,13 @@ delta = {
     pg.K_RIGHT: (+5, 0),
 }
 
+
+
+
+
+
+
+
 def check_bound(rect:pg.Rect) -> tuple[bool, bool]:
     yoko, tate =True, True
     if rect.left < 0 or WIDTH < rect.right:  # 横方向判定
@@ -26,6 +33,7 @@ def main():
     bg_img = pg.image.load("ex02/fig/pg_bg.jpg")
     kk_img = pg.image.load("ex02/fig/3.png")
     kk_img = pg.transform.rotozoom(kk_img, 0, 2.0)
+    a = {(-5,0):pg.transform.rotozoom(kk_img, 0, 2.0),(5,-5):pg.transform.rotozoom(kk_img, 45, 2.0),(0,-5):pg.transform.rotozoom(kk_img, 90, 2.0),(+5,-5):pg.transform.rotozoom(kk_img, 45, 2.0),(+5.0):pg.transform.rotozoom(kk_img, 0, 2.0),(+5,+5):pg.transform.rotozoom(kk_img, 45, 2.0),(0,+5):pg.transform.rotozoom(kk_img, 90, 2.0),(-5,+5):pg.transform.rotozoom(kk_img, 0, 2.0)}
     kk_rct = kk_img.get_rect()
     kk_rct.center = 900, 400
     bd_img = pg.Surface((20,20))
